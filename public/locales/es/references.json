@@ -1,0 +1,12 @@
+{
+  "apaTitle": "APA: Formato de la Asociación Americana de Psicología",
+  "remove": "Eliminar",
+  "copy": "Copiar",
+  "copied": "¡Copiado!",
+  "copyAll": "Copiar {{subject}}",
+  "copiedAll": "¡{{number}} referencias {{subject}} copiadas!",
+  "removeAll": "Eliminar {{subject}}",
+  "error": {
+    "alreadyExists": "Esta referencia ya existe."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "yes": "Sí",
+  "no": "No",
+  "loading": "Cargando...",
+  "open_drawer": "Abrir bandeja",
+  "login": "Iniciar sesión",
+  "availableSoon": "¡Disponible proximamente!",
+  "language": {
+    "change": "Cambiar lenguaje"
+  },
+  "title": {
+    "header": "¡Bienvenido al generador de referencias!",
+    "subheader": "Por favor haga clic en un formato para comenzar."
+  },
+  "notFound": {
+    "header": "No disponible",
+    "message": "Lo sentimos, pero el recurso que busca no fue encontrado en el servidor."
+  }
+}

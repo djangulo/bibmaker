@@ -1,0 +1,19 @@
+{
+  "yes": "Yes",
+  "no": "No",
+  "loading": "Loading...",
+  "open_drawer": "Open drawer",
+  "login": "Login",
+  "availableSoon": "Available soon!",
+  "language": {
+    "change": "Change language"
+  },
+  "title": {
+    "header": "Welcome to the citation generator!",
+    "subheader": "Please click on a format to get started."
+  },
+  "notFound": {
+    "header": "Not found",
+    "message": "We're sorry, but the resource you're looking for was not found on the server."
+  }
+}
