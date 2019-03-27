@@ -16,6 +16,8 @@ const References = ({ state, removeReference, updateReference }) => {
 
   function copyOneToClipboard(e) {
     const id = e.target.value;
+    console.log('id: ', id);
+    console.log('event: ', e);
     // const inner = document.querySelector(`#${id}`).innerHTML;
     const range = document.createRange();
     range.selectNodeContents(ref.current.querySelector('#' + id));
@@ -42,15 +44,13 @@ const References = ({ state, removeReference, updateReference }) => {
 
   return (
     <div ref={ref}>
-      {state && state.apa.length ? (
-        <ReferenceGroup
-          format="apa"
-          references={state.apa}
-          onCopyAll={e => copyGroupToClipboard(e, 'apa')}
-          onRemoveAll={() => removeReferenceGroup('apa')}
-          onCopyOne={copyOneToClipboard}
-        />
-      ) : null}
+      <ReferenceGroup
+        format="apa"
+        references={state.apa}
+        onCopyAll={e => copyGroupToClipboard(e, 'apa')}
+        onRemoveAll={() => removeReferenceGroup('apa')}
+        onCopyOne={copyOneToClipboard}
+      />
     </div>
   );
 

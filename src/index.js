@@ -1,5 +1,7 @@
-import React, { Suspense } from 'react';
+/** @jsx jsx */
+import React from 'react';
 import ReactDOM from 'react-dom';
+import { jsx } from '@emotion/core';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
@@ -16,7 +18,7 @@ import('./i18n').then(() => {
   ReactDOM.render(
     <Provider store={store}>
       <Router>
-        <Suspense
+        <React.Suspense
           fallback={
             <Dimmer active>
               <Loader>Loading...</Loader>
@@ -24,7 +26,7 @@ import('./i18n').then(() => {
           }
         >
           <App />
-        </Suspense>
+        </React.Suspense>
       </Router>
     </Provider>,
     document.getElementById('root')

@@ -5,7 +5,7 @@ import { Popup, List } from 'semantic-ui-react';
 import { useTranslation } from 'react-i18next';
 import { removeReference } from '../../store/referencesDuck';
 
-import APAFormatter from './apaFormatter';
+import APAFormatter from '../apa/apaFormatter';
 
 const Reference = ({ format, reference, index, onCopy, removeReference }) => {
   const { t } = useTranslation('references');

@@ -29,7 +29,7 @@ const ReferenceGroup = ({
     clearTimeout(timeoutCounter);
   }
 
-  return references && references.length ? (
+  return (
     <List verticalAlign="middle" id={`${format}-all`}>
       <List.Item>
         <List.Content floated="right">
@@ -44,6 +44,7 @@ const ReferenceGroup = ({
                 })}
                 icon="copy"
                 value={`${format}-all`}
+                disabled={!references || references.length === 0}
                 onClick={onCopyAll}
                 size="tiny"
               />
@@ -64,6 +65,7 @@ const ReferenceGroup = ({
               subject: format.toUpperCase(),
               defaultValue: `Remove ${format.toUpperCase()}`
             })}
+            disabled={!references || references.length === 0}
             icon="close"
             onClick={onRemoveAll}
             size="tiny"
@@ -81,7 +83,7 @@ const ReferenceGroup = ({
         />
       ))}
     </List>
-  ) : null;
+  );
 };
 
 export default ReferenceGroup;

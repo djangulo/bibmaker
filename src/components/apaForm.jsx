@@ -99,7 +99,12 @@ const APAForm = ({ state, error, addReference }) => {
     televisionMedia: { authors: [{ firstName: '', lastName: '' }] },
     audioRecording: { authors: [{ firstName: '', lastName: '' }] },
     podcast: { authors: [{ firstName: '', lastName: '' }] },
-    cdrom: { authors: [{ firstName: '', lastName: '' }] }
+    cdrom: { authors: [{ firstName: '', lastName: '' }] },
+    wikipedia: {},
+    onlineNewspaper: { authors: [{ firstName: '', lastName: '' }] },
+    onlineEncyclopedia: { authors: [{ firstName: '', lastName: '' }] },
+    report: {},
+    law: {}
   };
 
   const [stateSnapshot, setStateSnapshot] = useState({});
@@ -162,7 +167,6 @@ const APAForm = ({ state, error, addReference }) => {
     const { media } = mutable;
     if (mutable[media].date)
       mutable[media].date = new Date(mutable[media].date);
-
     addReference({ media, values: mutable[media] }, 'apa');
     if (!error) form.reset({ ...stateSnapshot, [media]: initial[media] });
   };
@@ -196,7 +200,7 @@ const APAForm = ({ state, error, addReference }) => {
             compact={true}
           />
           {mediaMapper.map(({ media, component: C }) => (
-            <Condition when="media" is={media}>
+            <Condition key={media} when="media" is={media}>
               <C push={push} />
             </Condition>
           ))}

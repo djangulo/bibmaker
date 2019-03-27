@@ -81,6 +81,12 @@ const PhotographForm = ({ push }) => {
         component={InputAdapter}
         placeholder={t('apa:form.title', 'Title')}
       />
+      <Field
+        name="photograph.locatedAt"
+        label={t('apa:form.locatedAt')}
+        component={InputAdapter}
+        placeholder={t('apa:form.placeholder.locatedAt', 'UCLA Library')}
+      />
     </React.Fragment>
   );
 };
