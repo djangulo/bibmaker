@@ -26,7 +26,7 @@ const APAFormatter = ({ media, values }) => {
           const { preOpts = {} } = formats[key];
           const { openParens, closeParens } = parseWrap(wrap);
 
-          return (
+          return value ? (
             <React.Fragment key={`${key}-${index}`}>
               {prepend ? <span>{prepend}</span> : null}
               {key === 'url' ? (
@@ -74,7 +74,7 @@ const APAFormatter = ({ media, values }) => {
                   })
                 : null}
             </React.Fragment>
-          );
+          ) : null;
         })}
     </div>
   );
