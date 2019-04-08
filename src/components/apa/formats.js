@@ -3,6 +3,20 @@ import i18n from '../../i18n';
 import { parseAuthors, parseDate, parsePages } from './utils';
 
 const formatting = {
+  periodicals: {
+    meta: {
+      order: ['authors', 'date', 'title', 'location', 'editorial']
+    },
+    authors: { pre: parseAuthors },
+    date: {
+      wrap: 'parens',
+      pre: parseDate,
+      preOpts: { lang: i18n.language, media: 'book' }
+    },
+    title: { style: { fontStyle: 'italic' } },
+    publicationPlace: {},
+    editorial: { closer: '.' }
+  },
   book: {
     meta: {
       order: ['authors', 'date', 'title', 'publicationPlace', 'editorial']
@@ -102,7 +116,6 @@ const formatting = {
       preOpts: { lang: i18n.language, media: 'webPage' }
     },
     title: { style: { fontStyle: 'italic' }, closer: '.' },
-    location: { wrap: 'parens', closer: ':' },
     entityName: {
       style: { fontStyle: 'italic' },
       closer: '.',

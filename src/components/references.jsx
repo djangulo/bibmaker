@@ -11,16 +11,18 @@ import {
 
 import ReferenceGroup from './referenceGroup';
 
-const References = ({ state, removeReference, updateReference }) => {
+const References = ({
+  state,
+  removeReference,
+  updateReference,
+  removeReferenceGroup
+}) => {
   const ref = React.useRef(null);
 
   function copyOneToClipboard(e) {
     const id = e.target.value;
-    console.log('id: ', id);
-    console.log('event: ', e);
-    // const inner = document.querySelector(`#${id}`).innerHTML;
     const range = document.createRange();
-    range.selectNodeContents(ref.current.querySelector('#' + id));
+    range.selectNodeContents(document.querySelector('#' + id));
     const selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(range);
@@ -35,7 +37,7 @@ const References = ({ state, removeReference, updateReference }) => {
     if (!state[format]) return;
     for (let i = 0; i < state[format].length; i++) {
       range = document.createRange();
-      range.selectNodeContents(ref.current.querySelector(`#${format}-${i}`));
+      range.selectNodeContents(document.querySelector(`#${format}-${i}`));
       selection.addRange(range);
     }
     document.execCommand('copy');
@@ -53,40 +55,6 @@ const References = ({ state, removeReference, updateReference }) => {
       />
     </div>
   );
-
-  // return (
-  //   <div ref={ref}>
-  //     {state && state.apa.length ? (
-  //       <List divided verticalAlign="middle" id="apa-all">
-  //         <List.Item>
-  //           <List.Content floated="right">
-  //             <SemanticButton
-  //               text={t('references:copyAll', {
-  //                 subject: 'APA',
-  //                 defaultValue: 'Copy APA'
-  //               })}
-  //               icon="copy"
-  //               value="apa-all"
-  //               onClick={() => console.log('copied all')}
-  //               size="tiny"
-  //             />
-  //           </List.Content>
-  //           <List.Header>{t('references:apaTitle')}</List.Header>
-  //         </List.Item>
-  //         {state.apa.map((reference, index) => (
-  //           <Reference
-  //             format="apa"
-  //             reference={reference}
-  //             index={index}
-  //             onCopy={copyOneToClipboard}
-  //             onRemove={() => removeReference(index, 'apa')}
-  //           />
-  //         ))}
-  //       </List>
-  //     ) : null}
-  //     <div id="pastebin" style={{ visibility: 'hidden' }} ref={copyRef} />
-  //   </div>
-  // );
 };
 
 export default connect(

@@ -116,50 +116,66 @@ const APAForm = ({ state, error, addReference }) => {
 
   const mediaOptions = [
     { value: '', text: '' },
-    { value: 'book', text: t('apa:book', 'Book') },
-    { value: 'image', text: t('apa:image', 'Image') },
-    { value: 'photograph', text: t('apa:photograph', 'Photograph') },
-    { value: 'wikipedia', text: t('apa:wikipedia', 'Wikipedia') },
-    { value: 'webPage', text: t('apa:webPage', 'Web page') },
-    { value: 'blog', text: t('apa:blog', 'Blog') },
-    { value: 'magazine', text: t('apa:magazine', 'Magazine') },
+    { value: 'book', text: t('apa:book', 'Book'), icon: 'book' },
+    { value: 'image', text: t('apa:image', 'Image'), icon: 'image' },
+    {
+      value: 'photograph',
+      text: t('apa:photograph', 'Photograph'),
+      icon: 'photo'
+    },
+    {
+      value: 'wikipedia',
+      text: t('apa:wikipedia', 'Wikipedia'),
+      icon: 'wikipedia w'
+    },
+    { value: 'webPage', text: t('apa:webPage', 'Web page'), icon: 'world' },
+    { value: 'blog', text: t('apa:blog', 'Blog'), icon: 'blogger b' },
+    { value: 'magazine', text: t('apa:magazine', 'Magazine'), icon: 'tag' },
     {
       value: 'onlineMagazine',
-      text: t('apa:onlineMagazine', 'Online Magazine')
+      text: t('apa:onlineMagazine', 'Online Magazine'),
+      icon: 'at'
     },
     {
       value: 'newspaper',
-      text: t('apa:newspaper', 'Newspaper')
+      text: t('apa:newspaper', 'Newspaper'),
+      icon: 'newspaper'
     },
     {
       value: 'onlineNewspaper',
-      text: t('apa:onlineNewspaper', 'Online Newspaper')
+      text: t('apa:onlineNewspaper', 'Online Newspaper'),
+      icon: 'newspaper outline'
     },
     {
       value: 'scienceJournal',
-      text: t('apa:scienceJournal', 'Scientific Journal')
+      text: t('apa:scienceJournal', 'Scientific Journal'),
+      icon: 'lab'
     },
     {
       value: 'onlineVideo',
-      text: t('apa:onlineVideo', 'Online Video')
+      text: t('apa:onlineVideo', 'Online Video'),
+      icon: 'youtube'
     },
-    { value: 'video', text: t('apa:video', 'Video') },
+    { value: 'video', text: t('apa:video', 'Video'), icon: 'film' },
     {
       value: 'onlineEncyclopedia',
-      text: t('apa:onlineEncyclopedia', 'Online Encyclopedia')
+      text: t('apa:onlineEncyclopedia', 'Online Encyclopedia'),
+      icon: 'remove bookmark'
     },
-    { value: 'report', text: t('apa:report', 'Report') },
+    { value: 'report', text: t('apa:report', 'Report'), icon: 'table' },
     {
       value: 'televisionMedia',
-      text: t('apa:televisionMedia', 'Television Media')
+      text: t('apa:televisionMedia', 'Television Media'),
+      icon: 'tv'
     },
     {
       value: 'audioRecording',
-      text: t('apa:audioRecording', 'Audio Recording')
+      text: t('apa:audioRecording', 'Audio Recording'),
+      icon: 'file audio'
     },
-    { value: 'podcast', text: t('apa:podcast', 'Podcast') },
-    { value: 'cdrom', text: t('apa:cdrom', 'CD-ROM') },
-    { value: 'law', text: t('apa:law', 'Law') }
+    { value: 'podcast', text: t('apa:podcast', 'Podcast'), icon: 'podcast' },
+    { value: 'cdrom', text: t('apa:cdrom', 'CD-ROM'), icon: 'dot circle' },
+    { value: 'law', text: t('apa:law', 'Law'), icon: 'law' }
   ];
 
   const onSubmit = (values, form) => {
