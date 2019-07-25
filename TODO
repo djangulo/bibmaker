@@ -1,0 +1,5 @@
+* create the storage microservice
+* dockerize
+* deploy
+* simplify reference, save html blob for simpler re-render
+* edit reference onclick (populate form, controlled component)
